@@ -2,9 +2,9 @@
 
 public class Enclosure
 {
-    public string AnimalName { get;}
-    public int AnimalCount { get;}
-    public string AnimalSound { get;}
+    public string AnimalName { get; }
+    public int AnimalCount { get; }
+    public string AnimalSound { get; }
 
     private List<Animal> Animals { get; set; } = new();
 
@@ -13,17 +13,18 @@ public class Enclosure
         ["male"] = 0,
         ["female"] = 0
     };
+
     public Enclosure(string animalName, int animalCount, string animalSound)
     {
         AnimalName = animalName;
         AnimalCount = animalCount;
         AnimalSound = animalSound;
-        
+
         for (int i = 0; i < animalCount; i++)
         {
             Animals.Add(new Animal());
         }
-        
+
         foreach (var animal in Animals)
         {
             AnimalGender[animal.Gender] += 1;
@@ -32,7 +33,6 @@ public class Enclosure
 
     public void ShowEnclosureInfo()
     {
-        
         Console.WriteLine($"Животные - {AnimalName}, кол-во - {AnimalCount}," +
                           $"издаваемый звук - {AnimalSound}," +
                           $"самцов - {AnimalGender["male"]}, самок  - {AnimalGender["female"]}");
