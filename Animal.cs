@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography;
-
-namespace Task_12;
+﻿namespace Task_12;
 
 public class Animal
 {
